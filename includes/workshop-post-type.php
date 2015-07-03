@@ -12,7 +12,7 @@ function create_workshop_post_type() {
         'add_new_item' => __( 'Add New Workshop' )
       ),
       'public' => true,
-      'taxonomies' => array('category', 'post_tag', 'presenter'),
+      'taxonomies' => array('post_tag', 'presenter'),
       'description' => 'A workshop, with a presenter',
       'supports' => array('title','editor','thumbnail','custom-fields'),
       'has_archive' => true,

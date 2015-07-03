@@ -6,8 +6,8 @@
 get_header(); ?>
 
 	
-		<section id="primary">
-			<div id="content" role="main">			
+<section id="primary">
+	<div id="content" role="main">			
 
 <header class="page-header">
   <h1 class="page-title"><a href="/workshops">Workshops</a></h1>
