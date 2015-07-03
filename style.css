@@ -139,11 +139,16 @@ footer .widget-title {
 
 /* Attraction Filters. MOVE! */
 
+.attraction-filters {
+  padding: 1em;
+}
+
 .attraction-filters label {
   display: block;
 }
 
 /* Pagination */
+
 
 .pagination-nav {
   font-size: 1.25em;
@@ -161,5 +166,29 @@ footer .widget-title {
     padding-bottom: 0.25em;
     color: white;
     background-color: #1982d1;
+}
+
+#content .page-header {
+  padding: 0;
+}
+
+@media(max-width:760px) {
+  #content .page-header {
+    padding: 1em 2em;
+  }
+
+  .attraction-filters {
+    padding: 0;
+  }
+
+  .page-header select {
+    display: block;
+    margin-bottom: 1em;
+  }
+
+  .content-footer .pagination-nav {
+    padding: 1em 2em;
+  }
+
 }
 

@@ -12,7 +12,7 @@ get_header(); ?>
       <?php if ( have_posts() ) : ?>
 
         <header class="page-header">
-          <h1 class="page-title">Workshops: by <?php echo $term->name; ?> </h1>                            
+          <h1 class="page-title"><a href="/workshops">Workshops</a>: by <?php echo $term->name; ?> </h1>                            
 
          <?php get_template_part('workshop-filters',  get_post_format()); ?>
 

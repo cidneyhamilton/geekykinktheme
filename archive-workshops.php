@@ -3,7 +3,16 @@
  * Category template
  */
 
-get_header(); ?>
+get_header(); 
+
+query_posts(array(
+  'post_type' => 'workshops',
+  'order' => 'ASC',
+  'orderby' => 'title',
+  'paged' => ( get_query_var('paged') ? get_query_var('paged') : 1 )
+  )
+);
+?>
 
     <section id="primary">
       <div id="content" role="main">
@@ -29,11 +38,13 @@ get_header(); ?>
 
           <?php /* Pagination */ ?>
 
+        <footer class="content-footer">
         <div class="pagination-nav">
           <?php echo paginate_links(array(
             'prev_next'          => False,
           )); ?>
         </div>
+        </footer>
 
         <?php else : ?>
 

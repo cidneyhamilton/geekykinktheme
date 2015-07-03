@@ -20,13 +20,16 @@ function create_workshop_post_type() {
   );
 }
 
-function jme_presenter_dropdown() {
-  $select = "<select name='presenter-dropdown' id='presenter-dropdown' class='postform'>";
-  $select .= "<option value='#'>All Presenters</option>";
+function jme_presenter_dropdown($selected) {
+
+  if ($selected == null) {
+    $selected = 0;
+  }
 
   $args = array( 
     'orderby' => 'slug',
-    'show_option_all' => 'All Presenters',
+    'selected'=> $selected,
+    'show_option_all' => 'Select a Presenter',
     'taxonomy' => 'presenter',
     'echo' => 0,
     'id' => 'presenter-dropdown',
@@ -38,9 +41,13 @@ function jme_presenter_dropdown() {
   return $select;
 }
 
-function jme_workshop_dropdown() {
+function jme_workshop_dropdown($selected) {
+  if ($selected == null) {
+    $selected = 0;
+  }
+  
   $select = "<select name='workshop-dropdown' id='workshop-dropdown' class='postform'>";
-  $select .= "<option value='#'>All Workshops</option>";
+  $select .= "<option value='#'>Select a Workshop</option>";
 
   $args = array( 
     'posts_per_page' => 100, 
@@ -52,7 +59,11 @@ function jme_workshop_dropdown() {
   $posts = get_posts( $args );
 
   foreach( $posts as $post ) {
-    $select .= "<option value='" . get_the_permalink($post->ID) . "'>" . $post->post_title . "</option>";
+    $select .= "<option ";
+    if ($post->ID == $selected) {
+      $select .= "selected ";
+    }
+    $select .= "value='" . get_the_permalink($post->ID) . "'>" . $post->post_title . "</option>";
   }
 
   $select.= "</select>";

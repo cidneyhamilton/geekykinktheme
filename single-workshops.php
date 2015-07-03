@@ -10,7 +10,7 @@ get_header(); ?>
 			<div id="content" role="main">			
 
 <header class="page-header">
-  <h1 class="page-title">Workshops</h1>
+  <h1 class="page-title"><a href="/workshops">Workshops</a></h1>
 
   <?php get_template_part('workshop-filters',  get_post_format()); ?>
  
