@@ -12,19 +12,17 @@ get_header(); ?>
 <header class="page-header">
   <h1 class="page-title">Workshops</h1>
 
-  <div class="workshop-filters">
-  	<?php echo jme_workshop_dropdown(); ?>
-  </div>
+  <?php get_template_part('workshop-filters',  get_post_format()); ?>
  
 </header>
-				<?php while ( have_posts() ) : the_post(); ?>
+	<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php get_template_part( 'content-attraction', get_post_format() ); ?>
+		<?php get_template_part( 'content-workshop', get_post_format() ); ?>
 
-				<?php endwhile; // end of the loop. ?>
+	<?php endwhile; // end of the loop. ?>
 
-			</div><!-- #content -->
-		</section><!-- #primary -->
+</div><!-- #content -->
+</section><!-- #primary -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

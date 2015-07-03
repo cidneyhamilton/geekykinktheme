@@ -20,6 +20,24 @@ function create_workshop_post_type() {
   );
 }
 
+function jme_presenter_dropdown() {
+  $select = "<select name='presenter-dropdown' id='presenter-dropdown' class='postform'>";
+  $select .= "<option value='#'>All Presenters</option>";
+
+  $args = array( 
+    'orderby' => 'slug',
+    'show_option_all' => 'All Presenters',
+    'taxonomy' => 'presenter',
+    'echo' => 0,
+    'id' => 'presenter-dropdown',
+    'value_field' => 'slug'
+  );
+
+  $select = wp_dropdown_categories( $args );
+
+  return $select;
+}
+
 function jme_workshop_dropdown() {
   $select = "<select name='workshop-dropdown' id='workshop-dropdown' class='postform'>";
   $select .= "<option value='#'>All Workshops</option>";
