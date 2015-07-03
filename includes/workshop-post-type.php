@@ -29,7 +29,7 @@ function jme_presenter_dropdown($selected) {
   $args = array( 
     'orderby' => 'slug',
     'selected'=> $selected,
-    'show_option_all' => 'Select a Presenter',
+    'show_option_all' => 'All Workshops',
     'taxonomy' => 'presenter',
     'echo' => 0,
     'id' => 'presenter-dropdown',
@@ -47,7 +47,7 @@ function jme_workshop_dropdown($selected) {
   }
   
   $select = "<select name='workshop-dropdown' id='workshop-dropdown' class='postform'>";
-  $select .= "<option value='#'>Select a Workshop</option>";
+  $select .= "<option value=0>All Workshops</option>";
 
   $args = array( 
     'posts_per_page' => 100, 

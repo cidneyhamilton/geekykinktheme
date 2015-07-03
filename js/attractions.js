@@ -2,11 +2,21 @@
 
   $(function() {
     $("#workshop-dropdown").on('change', function() {
-    	window.location.href = $(this).val();
+    	var value = $(this).val();
+    	if (value == 0) {
+    		window.location.href = "/workshops";
+    	} else {
+    		window.location.href = value;
+    	}	
     });
 
     $("#presenter-dropdown").on('change', function() {
-    	window.location.href = "/presenter/" + $(this).val();
+    	var value = $(this).val();
+    	if (value == 0) {
+    		window.location.href = "/workshops";
+    	} else {
+    		window.location.href = "/presenter/" + value;
+    	}
     });
 
   });

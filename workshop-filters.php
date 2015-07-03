@@ -12,9 +12,9 @@
 
 <div class="attraction-filters">
 	<label for="workshop-dropdown">
-	By Name: <?php echo jme_workshop_dropdown($selected); ?>
+	Filter By Name: <?php echo jme_workshop_dropdown($selected); ?>
 	</label>
 	<label for="presenter-dropdown">
-	  By Presenter: <?php echo jme_presenter_dropdown($selected); ?>
+	Filter By Presenter: <?php echo jme_presenter_dropdown($selected); ?>
 	</label>
 </div>

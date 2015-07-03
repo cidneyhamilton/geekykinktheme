@@ -20,7 +20,7 @@ query_posts(array(
       <?php if ( have_posts() ) : ?>
 
         <header class="page-header">
-          <h1 class="page-title">Workshops: All</h1>
+          <h1 class="page-title"><a href="/workshops">Workshops</a>: All</h1>
           
          <?php get_template_part('workshop-filters',  get_post_format()); ?>
 
