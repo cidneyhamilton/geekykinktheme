@@ -10,6 +10,9 @@
 	}
 ?>
 
+<header class="page-header">
+  <h1 class="page-title"><a href="/workshops">Workshops</a></h1>
+
 <div class="attraction-filters">
 	<label for="workshop-dropdown">
 	Filter By Name: <?php echo jme_workshop_dropdown($selected); ?>
@@ -18,3 +21,12 @@
 	Filter By Presenter: <?php echo jme_presenter_dropdown($selected); ?>
 	</label>
 </div>
+
+<?php if (!is_single()): ?>
+	<div class="pagination-nav">
+		<?php echo paginate_links(array(
+		'prev_next'          => False,
+		)); ?>
+	</div>  
+	<?php endif; ?>
+</header>

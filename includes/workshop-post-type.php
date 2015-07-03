@@ -71,4 +71,55 @@ function jme_workshop_dropdown($selected) {
   return $select;
 }
 
+add_action('add_meta_boxes', 'workshop_meta_boxes');
+
+// Create meta boxes on Create/Edit Attraction page
+function workshop_meta_boxes() {
+
+  add_meta_box( 
+        'attraction_website',
+        __( 'Website', 'jme_event_base_theme' ),
+        'attraction_website_meta_box',
+        'vendors',
+        'side',
+        'default'
+    );
+
+   add_meta_box( 
+      'attraction_facebook',
+      __( 'Facebook Page Url', 'jme_event_base_theme' ),
+      'attraction_facebook_meta_box',
+      'vendors',
+      'side',
+      'default'
+    );
+
+  add_meta_box( 
+    'attraction_twitter',
+    __( 'Twitter Feed', 'jme_event_base_theme' ),
+    'attraction_twitter_meta_box',
+    'vendors',
+    'side',
+    'default'
+  );
+  
+  add_meta_box(
+    'attraction_video',
+    __( 'Video Reel', 'jme_event_base_theme' ),
+    'attraction_video_meta_box',
+    'vendors',
+    'side',
+    'default'
+  );
+
+  add_meta_box(
+    'attraction_fetlife',
+    __( 'Fetlife Link', 'jme_event_base_theme' ),
+    'attraction_fetlife_meta_box',
+    'vendors',
+    'side',
+    'default'
+  );
+}
+
 ?>

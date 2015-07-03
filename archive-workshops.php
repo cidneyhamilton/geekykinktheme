@@ -17,19 +17,11 @@ query_posts(array(
     <section id="primary">
       <div id="content" role="main">
 
+      <?php get_template_part('workshop-header',  get_post_format()); ?>
+
       <?php if ( have_posts() ) : ?>
 
-        <header class="page-header">
-          <h1 class="page-title"><a href="/workshops">Workshops</a>: All</h1>
           
-         <?php get_template_part('workshop-filters',  get_post_format()); ?>
-
-          <div class="pagination-nav">
-            <?php echo paginate_links(array(
-              'prev_next'          => False,
-            )); ?>
-          </div>  
-        </header>
 
           <?php /* Start the Loop */ ?>
           <?php while ( have_posts() ) : the_post(); ?>       	 	
