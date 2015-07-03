@@ -10,6 +10,8 @@ function gke_scripts() {
     // custom JS
     wp_enqueue_script( 'script', get_stylesheet_directory_uri() . '/js/script.js', array('jquery'));
 
+    wp_enqueue_script( 'attractions', get_stylesheet_directory_uri() . '/js/attractions.js', array('jquery'));
+
 }
 
 add_action( 'after_setup_theme', 'gke_setup' );
