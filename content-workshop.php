@@ -20,7 +20,7 @@
           <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'jme-event-base-theme' ) ); ?>
 
           <?php if ($presenter != null): ?>
-            Presented by: <a href="<?php esc_url(get_term_link($presenter)); ?>"><?php echo $presenter->name; ?></a>
+            Presented by: <a href="<?php echo get_term_link($presenter, 'presenter'); ?>"><?php echo $presenter->name; ?></a>
           <?php endif; ?>
         </section>
 
