@@ -2,6 +2,40 @@
 
 add_action( 'wp_enqueue_scripts', 'gke_scripts' );
 
+function jme_post_type_dropdown($post_type, $selected, $all_option) {
+  if ($selected == null) {
+    $selected = 0;
+  }
+
+  if ($all_option == null) {
+    $all_option = "All";
+  }
+  
+  $select = "<select name='".$post_type."-dropdown' id='".$post_type."-dropdown' class='postform'>";
+  $select .= "<option value=0>".$all_option."</option>";
+
+  $args = array( 
+    'posts_per_page' => 100, 
+    'post_type' => $post_type,
+    'orderby'=> 'title', 
+    'order' => 'ASC'
+  );
+
+  $posts = get_posts( $args );
+
+  foreach( $posts as $post ) {
+    $select .= "<option ";
+    if ($post->ID == $selected) {
+      $select .= "selected ";
+    }
+    $select .= "value='" . get_the_permalink($post->ID) . "'>" . $post->post_title . "</option>";
+  }
+
+  $select.= "</select>";
+
+  return $select;
+}
+
 function gke_scripts() {
     // custom CSS
     wp_enqueue_style( 'parent-style', get_template_directory_uri().'/style.css' );

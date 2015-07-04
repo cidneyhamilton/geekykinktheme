@@ -20,6 +20,10 @@ function create_event_post_type() {
   );
 }
 
+function jme_event_dropdown($selected) {
+  return jme_post_type_dropdown("events", $selected, "All Events");
+}
+
 add_action('add_meta_boxes', 'event_meta_boxes');
 
 // Create meta boxes on Create/Edit Attraction page

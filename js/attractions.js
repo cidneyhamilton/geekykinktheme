@@ -1,7 +1,17 @@
 (function($, undefined) {
 
   $(function() {
-    $("#workshop-dropdown").on('change', function() {
+
+    $("#events-dropdown").on('change', function() {
+        var value = $(this).val();
+        if (value == 0) {
+            window.location.href = "/events";
+        } else {
+            window.location.href = value;
+        }   
+    });
+
+    $("#workshops-dropdown").on('change', function() {
     	var value = $(this).val();
     	if (value == 0) {
     		window.location.href = "/workshops";
@@ -10,7 +20,7 @@
     	}	
     });
 
-    $("#vendor-dropdown").on('change', function() {
+    $("#vendors-dropdown").on('change', function() {
         var value = $(this).val();
         if (value == 0) {
             window.location.href = "/vendors";

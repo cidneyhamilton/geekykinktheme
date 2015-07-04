@@ -21,33 +21,7 @@ function create_vendor_post_type() {
 }
 
 function jme_vendor_dropdown($selected) {
-  if ($selected == null) {
-    $selected = 0;
-  }
-  
-  $select = "<select name='vendor-dropdown' id='vendor-dropdown' class='postform'>";
-  $select .= "<option value=0>All Vendors</option>";
-
-  $args = array( 
-    'posts_per_page' => 100, 
-    'post_type' => 'vendors',
-    'orderby'=> 'title', 
-    'order' => 'ASC'
-  );
-
-  $posts = get_posts( $args );
-
-  foreach( $posts as $post ) {
-    $select .= "<option ";
-    if ($post->ID == $selected) {
-      $select .= "selected ";
-    }
-    $select .= "value='" . get_the_permalink($post->ID) . "'>" . $post->post_title . "</option>";
-  }
-
-  $select.= "</select>";
-
-  return $select;
+  return jme_post_type_dropdown("vendors", $selected, "All Vendors");
 }
 
 

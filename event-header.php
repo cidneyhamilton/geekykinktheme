@@ -1,6 +1,24 @@
+<?php
+	$selected = 0;
+
+	$term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy')); 
+	if ($term != null) {
+		$selected = (int) $term->term_id;
+	} 
+	if (is_single()) {
+		$selected = get_the_id();
+	}
+?>
 
 <header class="page-header">
-	<h1 class="page-title">Games and Social Events</a></h1>
+	<h1 class="page-title"><a href="/events">Games and Social Events</a></h1>
+
+	<div class="attraction-filters">
+		<label for="events-dropdown">
+		Filter By Name: <?php echo jme_event_dropdown($selected); ?>
+		</label>
+	</div>
+
 	<?php if (!is_single()): ?>
 	<div class="pagination-nav">
 		<?php echo paginate_links(array(
@@ -8,4 +26,5 @@
 		)); ?>
 	</div>  
 	<?php endif; ?>
+
 </header>

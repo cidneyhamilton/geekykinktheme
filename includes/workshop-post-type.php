@@ -42,33 +42,8 @@ function jme_presenter_dropdown($selected) {
 }
 
 function jme_workshop_dropdown($selected) {
-  if ($selected == null) {
-    $selected = 0;
-  }
-  
-  $select = "<select name='workshop-dropdown' id='workshop-dropdown' class='postform'>";
-  $select .= "<option value=0>All Workshops</option>";
 
-  $args = array( 
-    'posts_per_page' => 100, 
-    'post_type' => 'workshops',
-    'orderby'=> 'title', 
-    'order' => 'ASC'
-  );
-
-  $posts = get_posts( $args );
-
-  foreach( $posts as $post ) {
-    $select .= "<option ";
-    if ($post->ID == $selected) {
-      $select .= "selected ";
-    }
-    $select .= "value='" . get_the_permalink($post->ID) . "'>" . $post->post_title . "</option>";
-  }
-
-  $select.= "</select>";
-
-  return $select;
+  return jme_post_type_dropdown("workshops", $selected, "All Workshops");
 }
 
 add_action('add_meta_boxes', 'workshop_meta_boxes');
