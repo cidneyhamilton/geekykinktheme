@@ -8,6 +8,7 @@ get_header(); ?>
 	
 <section id="primary">
 	<div id="content" role="main">	
+	
   	<?php get_template_part('workshop-header',  get_post_format()); ?>
 
 	<?php while ( have_posts() ) : the_post(); ?>

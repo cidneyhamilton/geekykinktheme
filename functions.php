@@ -32,5 +32,6 @@ function gke_setup() {
 require_once('includes/custom-taxonomies.php');
 require_once('includes/workshop-post-type.php');
 require_once('includes/vendor-post-type.php');
+require_once('includes/event-post-type.php');
 
 ?>
