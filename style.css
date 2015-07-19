@@ -137,16 +137,6 @@ footer .widget-title {
   color: #e2dfdf;
 }
 
-/* Attraction Filters. MOVE! */
-
-.attraction-filters {
-  padding: 1em;
-}
-
-.attraction-filters label {
-  display: block;
-}
-
 /* Pagination */
 
 
@@ -172,23 +162,4 @@ footer .widget-title {
   padding: 0;
 }
 
-@media(max-width:760px) {
-  #content .page-header {
-    padding: 1em 2em;
-  }
-
-  .attraction-filters {
-    padding: 0;
-  }
-
-  .page-header select {
-    display: block;
-    margin-bottom: 1em;
-  }
-
-  .content-footer .pagination-nav {
-    padding: 1em 2em;
-  }
-
-}
 
