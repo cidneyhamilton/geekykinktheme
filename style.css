@@ -111,4 +111,11 @@ footer .widget-title {
   padding: 0;
 }
 
+#main .tagcloud {
+  display: block;
+  padding: 1em;
+  border: 1px solid #eee;
+  margin: 1em 2.5em;
+}
+
 
