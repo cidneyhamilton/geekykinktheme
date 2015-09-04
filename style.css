@@ -55,11 +55,14 @@ Author URI: http://cidneyhamilton.com
 }
 
 .hentry,
-.hentry:last-child,
-.singular .hentry {
+.hentry:last-child {
   background-color: white;
   box-shadow: 0 0 2px 2px black;
   padding: 0.5em 1.5em;
+}
+
+.single .hentry {
+  box-shadow: none;
 }
 
 .social-links img {
