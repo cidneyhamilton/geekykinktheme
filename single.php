@@ -1,0 +1,29 @@
+<?php
+/**
+ * Template for displaying all single posts
+ */
+
+get_header(); 
+
+?>
+
+<section id="primary">
+	<div id="content" role="main">			
+
+		<?php if (in_category('blog')): ?>
+			<?php get_template_part('_partials/pageheader', 'blog'); ?>
+		<?php else: ?>
+			<?php get_template_part('_partials/pageheader'); ?>
+		<?php endif; ?>
+
+		<?php while ( have_posts() ) : the_post(); ?>
+
+			<?php get_template_part( '_partials/content', get_post_type()); ?>
+
+		<?php endwhile; // end of the loop. ?>
+
+	</div><!-- #content -->
+</section><!-- #primary -->
+
+<?php get_sidebar(); ?>
+<?php get_footer(); ?>
