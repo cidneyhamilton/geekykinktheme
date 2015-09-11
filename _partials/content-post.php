@@ -15,17 +15,14 @@
 
       <?php if (is_single() && in_category('blog')): ?>
         <section class="bio">
-          <?php 
-            $author = get_the_author_meta();
-          ?>
           <h1><?php the_author_posts_link(); ?></h1>
 
           <ul class="social">
-            <?php if (!empty($author['user_url'])) : ?>
-              <li><a href="<?php echo $author['user_url']; ?>" class="web" rel="me" target="_blank">Website</a></li>
+            <?php if (!empty(get_the_author_meta('user_url'))) : ?>
+              <li><a href="<?php echo get_the_author_meta('user_url'); ?>" class="web" rel="me" target="_blank">Website</a></li>
             <?php endif; ?>
-            <?php if (!empty($author['twitter']))  : ?>
-              <li><a href="http://twitter.com/<?php echo $author['twitter']; ?>" class="tw" rel="me" target="_blank">Twitter</a></li>
+             <?php if (!empty(get_the_author_meta('twitter'))) : ?>
+              <li><a href="<?php echo get_the_author_meta('twitter'); ?>" class="tw" rel="me" target="_blank">Twitter</a></li>
             <?php endif; ?>
           </ul>
           <p>
