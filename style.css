@@ -110,11 +110,23 @@ footer .widget-title {
     background-color: #1982d1;
 }
 
-#main .tagcloud {
+.tagcloud {
   display: block;
+}
+
+#primary .tagcloud {
   padding: 1em;
   border: 1px solid #eee;
   margin: 1em 2.5em;
+}
+
+.secondary .widget-title {
+  display: block;
+  border: 3px solid black;
+  padding: 0.5em 0.75em;
+  font-family: 'Avengers', sans-serif;
+  text-align: center;
+  background-color: #fff55a;
 }
 
 
