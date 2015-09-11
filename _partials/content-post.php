@@ -21,9 +21,6 @@
             <?php if (!empty(get_the_author_meta('user_url'))) : ?>
               <li><a href="<?php echo get_the_author_meta('user_url'); ?>" class="web" rel="me" target="_blank">Website</a></li>
             <?php endif; ?>
-             <?php if (!empty(get_the_author_meta('twitter'))) : ?>
-              <li><a href="<?php echo get_the_author_meta('twitter'); ?>" class="tw" rel="me" target="_blank">Twitter</a></li>
-            <?php endif; ?>
           </ul>
           <p>
             <?php echo get_the_author_meta('description'); ?>
